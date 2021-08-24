@@ -1,10 +1,28 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app">
+    <router-view />    
   </div>
-  <router-view/>
 </template>
+
+<script>
+import TestList from '@/components/TestList'
+export default{
+   name: 'app',
+   data(){
+     return {
+       tests: [
+         {id: 1,author: 'Ildar',title:'new test', type:'math'},
+         {id: 2,author: 'dar',title:'test4', type:'math'},
+         {id: 3,author: 'Il',title:'test3', type:'math'}
+       ]
+     }
+   },
+   components: {
+      TestList
+     }
+}
+</script>
+
 
 <style lang="less">
 #app {
